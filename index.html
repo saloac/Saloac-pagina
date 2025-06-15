@@ -3,357 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Económico Futurista Detallado - SAMUEL LOZANO A.</title>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Conceptos de Economía y Sociedad</title>
     <style>
-        :root {
-            --futuristic-bg: #0a0f1e;
-            --futuristic-bg-transparent: rgba(10, 15, 30, 0.88);
-            --primary-glow: #00c0ff;
-            --secondary-glow: #39ff14;
-            --accent-glow: #f39c12;
-            --text-bright: #e8e8e8;
-            --text-muted: #b0b0b0;
-            --border-glow: rgba(0, 192, 255, 0.3);
-            --shadow-glow: rgba(0, 192, 255, 0.15);
-            --hover-lift: translateY(-4px);
+        /* --- Estilos Generales --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Un blanco ligeramente más cálido */
+            color: #212529; /* Un negro menos intenso para mejor lectura */
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            overflow: auto;
+            padding: 0 25px;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;500;600&display=swap');
-        body{font-family:'Rajdhani','Orbitron',sans-serif;line-height:1.8;margin:0;padding:0;background-color:var(--futuristic-bg);color:var(--text-bright);overflow-x:hidden}
-        #particles-js{position:fixed;width:100%;height:100%;top:0;left:0;z-index:-1}
-        .main-nav{background-color:rgba(10,15,30,.95);padding:10px 0;position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--border-glow);box-shadow:0 2px 10px rgba(0,192,255,.1)}
-        .main-nav ul{list-style:none;padding:0;margin:0;display:flex;justify-content:center;flex-wrap:wrap}
-        .main-nav li a{color:var(--primary-glow);text-decoration:none;padding:10px 15px;display:block;font-size:1em;font-weight:500;transition:color .3s ease,text-shadow .3s ease}
-        .main-nav li a:hover,.main-nav li a.active{color:var(--secondary-glow);text-shadow:0 0 8px var(--secondary-glow)}
-        .main-nav li a .fa-solid{margin-right:8px}
-        .container{max-width:950px;margin:40px auto;padding:30px 40px;background-color:var(--futuristic-bg-transparent);border-radius:18px;border:1px solid var(--border-glow);box-shadow:0 0 30px var(--shadow-glow),0 0 12px var(--primary-glow) inset;backdrop-filter:blur(6px);position:relative;z-index:1}
-        section{opacity:0;transform:translateY(30px);transition:opacity .6s ease-out,transform .6s ease-out;margin-bottom:50px}
-        section.visible{opacity:1;transform:translateY(0)}
-        header{text-align:center;margin-bottom:70px;padding-bottom:35px;border-bottom:1px solid var(--border-glow)}
-        header h1{color:var(--primary-glow);font-size:2.8em;margin-bottom:.2em;font-family:'Orbitron',sans-serif;font-weight:700;text-shadow:0 0 12px var(--primary-glow),0 0 22px var(--primary-glow)}
-        h2{color:var(--primary-glow);font-size:2.4em;margin-top:50px;margin-bottom:30px;padding-bottom:15px;border-bottom:2px solid var(--secondary-glow);font-family:'Orbitron',sans-serif;font-weight:600;text-shadow:0 0 10px var(--primary-glow)}
-        h2 .fa-solid{margin-right:12px}
-        h3{color:var(--secondary-glow);font-size:1.9em;margin-top:25px;margin-bottom:18px;font-family:'Orbitron',sans-serif;text-shadow:0 0 7px var(--secondary-glow)}
-        h3 .fa-solid{margin-right:10px}
-        h4{color:var(--primary-glow);font-size:1.5em;margin-top:20px;margin-bottom:10px;font-family:'Rajdhani',sans-serif;font-weight:600}
-        p,li{color:var(--text-muted);font-size:1.15em;margin-bottom:1em;text-align:justify}
-        strong{color:var(--text-bright);font-weight:600}
-        ul,ol{padding-left:25px}
-        ul li,ol li{margin-bottom:.7em}
-        #conceptos-basicos article,#relacion-conceptos article{margin-bottom:40px;padding-bottom:30px;border-bottom:1px dashed var(--border-glow)}
-        #conceptos-basicos article:last-child,#relacion-conceptos article:last-child{border-bottom:none;margin-bottom:20px}
-        .modelos-lista{list-style:none;padding-left:0}
-        .modelo-item{background-color:rgba(15,22,40,.75);margin-bottom:20px;border-radius:12px;border:1px solid var(--border-glow);overflow:hidden;transition:all .3s ease-in-out,box-shadow .3s ease,border-color .3s ease}
-        .modelo-item:hover{transform:var(--hover-lift);box-shadow:0 0 18px var(--secondary-glow);border-left:6px solid var(--secondary-glow)}
-        .modelo-item.active{border-left:6px solid var(--primary-glow);box-shadow:0 0 12px var(--primary-glow)}
-        .modelo-trigger{display:flex;justify-content:space-between;align-items:center;padding:20px 25px;cursor:pointer;border-bottom:1px solid transparent;transition:background-color .3s ease}
-        .modelo-item.active .modelo-trigger{background-color:rgba(0,192,255,.12);border-bottom-color:var(--border-glow)}
-        .modelo-item:hover .modelo-trigger{background-color:rgba(57,255,20,.09)}
-        .modelo-nombre{font-weight:700;color:var(--primary-glow);font-size:1.5em;font-family:'Orbitron',sans-serif}
-        .modelo-nombre .fa-solid{margin-right:10px}
-        .toggle-icon{font-size:1.7em;color:var(--primary-glow);transition:transform .3s ease,color .3s ease}
-        .modelo-item.active .toggle-icon{transform:rotate(45deg);color:var(--secondary-glow)}
-        .modelo-contenido{padding:0 25px;max-height:0;overflow:hidden;transition:max-height .5s ease-out,padding .5s ease-out;background-color:rgba(10,15,30,.55)}
-        .modelo-item.active .modelo-contenido{max-height:1500px; /* Aumentado para contenido más extenso */ padding-top:20px;padding-bottom:20px}
-        .pros-contras{display:flex;gap:20px;margin-top:15px;flex-wrap:wrap}
-        .pros,.contras{flex:1;min-width:250px}
-        .pros-contras h4{margin-top:0;color:var(--text-bright)}
-        .pros-contras ul{padding-left:20px}
-        .pros-contras li{font-size:1em;color:var(--text-muted)}
-        .ejemplos p, .detalle-modelo p {font-style:italic;color:var(--text-muted);font-size:1em;}
-        .detalle-modelo { margin-top: 15px; padding-top:10px; border-top: 1px dashed rgba(0,192,255,0.2);}
+        /* --- Encabezado y Navegación --- */
+        header {
+            background: #005A9C; /* Azul institucional */
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: #FFC72C 5px solid; /* Amarillo/dorado complementario */
+        }
+        header h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background: #343a40; /* Un gris oscuro moderno */
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #495057;
+            border-radius: 5px;
+        }
 
-
-        #btnVolverArriba{display:none;position:fixed;bottom:30px;right:30px;z-index:999;border:none;outline:none;background-color:var(--primary-glow);color:var(--futuristic-bg);cursor:pointer;padding:15px;border-radius:50%;font-size:1.5em;box-shadow:0 0 15px var(--primary-glow);transition:background-color .3s ease,transform .3s ease}
-        #btnVolverArriba:hover{background-color:var(--secondary-glow);transform:scale(1.1)}
+        /* --- Estilos de Secciones --- */
+        section {
+            padding: 30px;
+            margin-bottom: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h2, h3, h4 {
+            color: #005A9C;
+        }
+        h2 {
+            border-bottom: 2px solid #FFC72C;
+            padding-bottom: 10px;
+            font-size: 2em;
+        }
+        h3 {
+            font-size: 1.5em;
+        }
         
-        /* Estilos del juego eliminados */
+        /* --- Estilos para los Modelos Económicos Interactivos --- */
+        details {
+            background: #e9ecef;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #dee2e6;
+        }
+        summary {
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 15px;
+            cursor: pointer;
+            background-color: #d4d9de;
+            color: #343a40;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+        summary:hover {
+            background-color: #c8ced3;
+        }
+        details[open] summary {
+            border-bottom: 1px solid #ccc;
+        }
+        .details-content {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .details-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .ventajas ul li {
+            color: #28a745; /* Verde para ventajas */
+        }
+        .desventajas ul li {
+            color: #dc3545; /* Rojo para desventajas */
+        }
+        b {
+            color: #005A9C;
+        }
 
+        /* --- Enlaces y Pie de página --- */
+        a.video-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #FF0000; /* Rojo YouTube Oficial */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        a.video-link:hover {
+            background-color: #c80000;
+        }
         footer {
             text-align: center;
-            margin-top: 70px;
-            padding: 35px 0;
-            border-top: 1px solid var(--border-glow);
-            font-size: 0.98em;
-            color: var(--text-muted);
+            padding: 20px;
+            margin-top: 30px;
+            background: #343a40;
+            color: #fff;
         }
-        footer p { margin: 8px 0; font-size: 1em; }
-        .nombre-autor {
-            color: var(--primary-glow);
-            font-weight: 600; font-family: 'Orbitron', sans-serif;
-        }
-        footer a {
-            color: var(--primary-glow); text-decoration: none;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-        }
-        footer a:hover {
-            color: var(--secondary-glow); text-shadow: 0 0 8px var(--secondary-glow);
-        }
-        ::selection { background-color: var(--secondary-glow); color: var(--futuristic-bg); }
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
 
-    <nav class="main-nav">
+    <header>
+        <h1>Conceptos Fundamentales de Economía y Sociedad</h1>
+    </header>
+
+    <nav>
         <ul>
-            <li><a href="#inicio"><i class="fa-solid fa-rocket"></i>Inicio</a></li>
-            <li><a href="#conceptos-basicos"><i class="fa-solid fa-brain"></i>Conceptos</a></li>
-            <li><a href="#modelos-economicos"><i class="fa-solid fa-chart-line"></i>Modelos</a></li>
-            <!-- Enlace al Juego eliminado -->
+            <li><a href="#conceptos-base">Conceptos Base</a></li>
+            <li><a href="#modelos-economicos">Modelos Económicos</a></li>
+            <li><a href="#economia-precolombina">Economía Precolombina</a></li>
+            <li><a href="#economia-colonial">Economía Colonial</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <header id="inicio">
-            <h1><i class="fa-solid fa-atom"></i> Portal Económico Futurista <i class="fa-solid fa-atom"></i></h1>
-        </header>
 
-        <section id="conceptos-basicos">
-            <h2><i class="fa-solid fa-lightbulb"></i>Conceptos Básicos Detallados</h2>
-            <article id="economia">
-                <h3><i class="fa-solid fa-coins"></i>¿Qué es Economía?</h3>
-                <p>La economía es una ciencia social fundamental que se encarga de estudiar cómo las sociedades, individuos, empresas y gobiernos toman decisiones para administrar recursos que son, por naturaleza, limitados (escasos) con el fin de producir bienes y servicios, y cómo estos se distribuyen para el consumo entre los diferentes miembros de la sociedad. La escasez implica que no todos los deseos y necesidades pueden ser satisfechos simultáneamente, lo que obliga a elegir.</p>
-                <p>Se divide principalmente en dos grandes ramas: la <strong>microeconomía</strong>, que analiza el comportamiento de agentes económicos individuales (como hogares y empresas) y sus interacciones en los mercados; y la <strong>macroeconomía</strong>, que estudia los fenómenos económicos agregados a nivel nacional o global, como la inflación, el desempleo, el crecimiento económico y las políticas fiscales y monetarias.</p>
-                <p>El objetivo último de la economía, desde muchas perspectivas, es comprender estos procesos para proponer soluciones que mejoren el bienestar general, la eficiencia en el uso de los recursos y la equidad en la distribución de la riqueza.</p>
-            </article>
-            <article id="cultura">
-                <h3><i class="fa-solid fa-masks-theater"></i>¿Qué es Cultura?</h3>
-                <p>La cultura, en un sentido amplio, es el tejido complejo que engloba el conjunto de conocimientos, creencias, arte, moral, derecho, costumbres, tradiciones, lenguajes, herramientas, técnicas y cualquier otra capacidad y hábito adquirido por el ser humano como miembro activo de una sociedad. Es un sistema dinámico y compartido de significados y prácticas que se transmite de generación en generación, aunque también evoluciona y se transforma con el tiempo.</p>
-                <p>Incluye tanto los aspectos materiales (objetos, artefactos, arquitectura) como los inmateriales (valores, normas, ideas, sistemas de creencias). La cultura moldea la forma en que las personas perciben el mundo, se relacionan entre sí, resuelven problemas y dan sentido a sus vidas. Es un factor determinante en la identidad de los grupos humanos y influye profundamente en sus sistemas económicos, políticos y sociales.</p>
-            </article>
-            <article id="politica">
-                <h3><i class="fa-solid fa-landmark-dome"></i>¿Qué es Política?</h3>
-                <p>La política se refiere al conjunto de actividades y procesos asociados con la toma de decisiones en grupo, o a otras formas de relaciones de poder entre individuos, como la distribución de recursos o el estatus. En un contexto más específico, se relaciona con el arte, doctrina u opinión referente al gobierno de los Estados, comunidades y otras entidades organizadas. Implica el ejercicio del poder y la autoridad para gestionar los asuntos públicos y alcanzar objetivos colectivos.</p>
-                <p>Sus dimensiones clave incluyen la organización del Estado y sus instituciones (legislativo, ejecutivo, judicial), los sistemas de gobierno (democracia, autocracia, etc.), la participación ciudadana (elecciones, movimientos sociales), las relaciones internacionales y la formulación e implementación de políticas públicas que buscan abordar problemas sociales y económicos, buscando el bien común o, en ocasiones, los intereses de grupos particulares.</p>
-            </article>
-            <article id="sociedad">
-                <h3><i class="fa-solid fa-users"></i>¿Qué es Sociedad?</h3>
-                <p>Una sociedad es un agregado organizado de individuos que conviven y se interrelacionan en un espacio y tiempo determinados, compartiendo generalmente una cultura, normas, valores e instituciones comunes. Estas interacciones están estructuradas por un conjunto de reglas de organización, tanto formales (leyes, constituciones) como informales (costumbres, tradiciones).</p>
-                <p>La sociedad implica una red compleja de relaciones sociales, roles, estatus y grupos que conforman su estructura. Las instituciones sociales (como la familia, la educación, la economía, el gobierno, la religión) son patrones establecidos de comportamiento y relaciones centrados en la satisfacción de necesidades sociales fundamentales. Las sociedades son dinámicas y están en constante cambio, influenciadas por factores internos y externos.</p>
-            </article>
-        </section>
+        <section id="conceptos-base">
+            <h2>Conceptos Base</h2>
+            
+            <h3>Economía</h3>
+            <p>La palabra economía proviene del griego "oikonomia" (<i>oikos</i>: casa, y <i>nomos</i>: ley o administración), que significa "administración del hogar". Modernamente, es la ciencia social que estudia la <b>producción, distribución y consumo de bienes y servicios</b>. Su problema fundamental es cómo gestionar <b>recursos escasos</b> para satisfacer <b>necesidades humanas que son ilimitadas</b>. Se divide en:</p>
+            <ul>
+                <li><b>Microeconomía:</b> Analiza las decisiones de agentes individuales (familias, empresas) y su interacción en los mercados. Estudia temas como la fijación de precios, la oferta y la demanda de un producto específico.</li>
+                <li><b>Macroeconomía:</b> Estudia la economía como un todo. Analiza agregados económicos como el Producto Interno Bruto (PIB), la inflación, el desempleo, el déficit público y el crecimiento económico de un país.</li>
+            </ul>
+             <a href="https://youtu.be/JLGAyU3dy2E?si=iva3907QDg9BEgmv" target="_blank" class="video-link">Video:¿Qué es la economía? (BCUEduca)</a>
 
-        <section id="relacion-conceptos">
-            <h2><i class="fa-solid fa-diagram-project"></i>Interrelación de Conceptos</h2>
-            <article>
-                <h3>La Danza Cósmica de la Realidad Social</h3>
-                <p>La economía, la cultura, la política y la sociedad no son entidades aisladas flotando en el vacío; son sistemas interconectados que se influencian mutuamente de formas complejas y a menudo sutiles. Las decisiones políticas pueden reconfigurar mercados económicos; por ejemplo, una nueva ley ambiental (política) puede aumentar los costos para ciertas industrias (economía) pero también fomentar la innovación en tecnologías limpias (economía/sociedad) y cambiar la percepción pública sobre la responsabilidad corporativa (cultura/sociedad).</p>
-                <p>Las tradiciones culturales y los valores (cultura) pueden moldear el comportamiento del consumidor (economía), las preferencias electorales (política) y las normas de interacción social (sociedad). La estructura social, incluyendo las desigualdades y las jerarquías (sociedad), puede determinar el acceso a oportunidades económicas y la influencia política. Entender estas interconexiones es crucial para analizar cualquier fenómeno social de manera integral y para diseñar intervenciones efectivas que busquen el progreso y el bienestar.</p>
-            </article>
+            <h3>Política</h3>
+            <p>Es el arte y la ciencia de gobernar y el proceso de tomar decisiones que afectan a una comunidad. La política se ocupa de la adquisición y el ejercicio del <b>poder</b>, la organización del <b>Estado</b> y la creación de leyes para regular la convivencia. Determina cómo se distribuyen los recursos públicos (a través de impuestos y gasto social) y cómo se garantizan los derechos y deberes de los ciudadanos. Los sistemas políticos varían desde la <b>democracia</b> (el poder reside en el pueblo) hasta el <b>autoritarismo</b> (el poder se concentra en una persona o un grupo).</p>
+            <a href="https://youtu.be/4CTr0pfFhvw?si=aMNnfNmJ8iwMPVHz" target="_blank" class="video-link">Video: ¿QUE ES LA POLÍTICA?  (EN MINUTOS)</a>
+            
+            <h3>Sociedad</h3>
+            <p>Es un conjunto organizado de individuos que viven en un territorio común, interactúan entre sí y comparten una cultura, normas y fines comunes. La sociedad no es solo un grupo de gente, sino un sistema con una <b>estructura social</b> definida por instituciones clave como la familia, el sistema educativo, el gobierno y la economía. A través de un proceso llamado <b>socialización</b>, los individuos aprenden e interiorizan las normas y valores de su sociedad.</p>
+            <a href=https://youtu.be/S-HSHwVUEKc?si=KAIyC25Nl3m-sth4"" target="_blank" class="video-link">Video: Qué es la Sociedad  (EDU JN)</a>
+
+            <h3>Cultura</h3>
+            <p>Es el "tejido" que da forma a una sociedad. Incluye el conjunto de conocimientos, creencias, arte, moral, leyes, costumbres y cualquier otra capacidad adquirida por el ser humano como miembro de la sociedad. Se puede dividir en:</p>
+            <ul>
+                <li><b>Cultura material:</b> Los objetos físicos creados por una sociedad, como la arquitectura, las herramientas, la ropa y la tecnología.</li>
+                <li><b>Cultura inmaterial:</b> Las creaciones abstractas de una sociedad, como el lenguaje, los valores, las creencias religiosas, las normas sociales y las tradiciones.</li>
+            </ul>
+            <a href="https://youtu.be/bYh9YaL6NN4?si=sGMGvyNMUmn0xWUA" target="_blank" class="video-link">Video: 🎆 🎭 ¿Qué es la Cultura? 🎨 🐉 [Fácil y Rápido] (A Cierta Ciencia)</a>
         </section>
 
         <section id="modelos-economicos">
-            <h2><i class="fa-solid fa-sitemap"></i>Modelos Económicos Detallados</h2>
-            <p>Un modelo económico es una representación teórica y simplificada de la realidad económica, utilizada para entender, explicar, predecir fenómenos y evaluar políticas. A continuación, se describen algunos de los principales modelos, sus características, ventajas, desventajas y ejemplos conceptuales:</p>
-            
-            <ul class="modelos-lista">
-                <li class="modelo-item">
-                    <div class="modelo-trigger">
-                        <span class="modelo-nombre"><i class="fa-solid fa-seedling"></i>Modelo Tradicional</span>
-                        <span class="toggle-icon">+</span>
+            <h2>Modelos Económicos</h2>
+            <p>Un modelo económico es una representación simplificada de la realidad económica de un país o región. Ayuda a entender cómo se organizan la producción y el consumo. Haz clic en cada modelo para ver sus detalles.</p>
+
+            <details>
+                <summary>Modelo Económico Tradicional</summary>
+                <div class="details-content">
+                    <p>Es el sistema más antiguo, basado en costumbres y tradiciones. La producción es principalmente de subsistencia y las ocupaciones se heredan. El cambio social y tecnológico es muy lento.</p>
+                    <div class="ventajas">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li><b>Sostenibilidad:</b> Generalmente, tiene un bajo impacto ambiental al no buscar la producción masiva.</li>
+                            <li><b>Cohesión social:</b> Fomenta fuertes lazos comunitarios y un sentido de identidad y pertenencia.</li>
+                            <li><b>Estabilidad y predictibilidad:</b> Los roles son claros y no cambian, lo que genera seguridad social.</li>
+                        </ul>
                     </div>
-                    <div class="modelo-contenido">
-                        <div class="detalle-modelo">
-                            <h4>Definición y Características Clave:</h4>
-                            <p>Este modelo económico se fundamenta en las costumbres, tradiciones, creencias y rituales transmitidos de generación en generación. Las decisiones económicas fundamentales – qué producir, cómo producir y para quién producir – se resuelven siguiendo patrones establecidos por los ancestros. La producción suele estar orientada a la subsistencia y al autoconsumo, con un escaso excedente para el intercambio comercial. La división del trabajo es simple, a menudo basada en el género y la edad. La propiedad de los recursos puede ser comunal o familiar.</p>
-                        </div>
-                        <div class="pros-contras">
-                            <div class="pros"><h4><i class="fa-solid fa-circle-plus"></i>Ventajas</h4><ul><li>Alta estabilidad social y roles claramente definidos.</li><li>Fuerte cohesión comunitaria y sentido de pertenencia.</li><li>Conocimiento profundo del entorno local y sus recursos.</li><li>Sostenibilidad inherente si no hay presiones externas.</li></ul></div>
-                            <div class="contras"><h4><i class="fa-solid fa-circle-minus"></i>Desventajas</h4><ul><li>Escasa innovación y resistencia al cambio tecnológico o social.</li><li>Bajo nivel de vida y crecimiento económico prácticamente nulo.</li><li>Vulnerabilidad extrema a desastres naturales, enfermedades o cambios en el entorno.</li><li>Limitadas oportunidades individuales fuera de los roles tradicionales.</li></ul></div>
-                        </div>
-                        <div class="ejemplos"><h4><i class="fa-solid fa-map-pin"></i>Ejemplos Conceptuales e Históricos:</h4><p>Algunas comunidades indígenas aisladas en la Amazonía o Papúa Nueva Guinea. Sociedades cazadoras-recolectoras. Aspectos de economías feudales agrarias en la Edad Media. Es importante notar que modelos puramente tradicionales son cada vez más raros en el mundo globalizado.</p></div>
+                    <div class="desventajas">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li><b>Estancamiento económico:</b> La resistencia a la innovación impide el crecimiento y la mejora de la calidad de vida.</li>
+                            <li><b>Bajo nivel de vida:</b> La producción limitada no permite acumular riqueza ni acceder a servicios modernos como la medicina avanzada.</li>
+                            <li><b>Vulnerabilidad extrema:</b> Depende tanto del clima que una sequía o plaga puede causar hambrunas.</li>
+                        </ul>
                     </div>
-                </li>
-                 <li class="modelo-item">
-                    <div class="modelo-trigger">
-                        <span class="modelo-nombre"><i class="fa-solid fa-hand-holding-dollar"></i>Capitalismo (Economía de Mercado)</span>
-                        <span class="toggle-icon">+</span>
+                    <h4>Ejemplos</h4>
+                    <p>Comunidades indígenas aisladas en el Amazonas, los inuit en el Ártico, y algunas zonas rurales de África y Asia.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Modelo Económico Capitalista (de Mercado)</summary>
+                <div class="details-content">
+                    <p>La propiedad de los medios de producción es privada. Las decisiones las toman individuos y empresas en el mercado, guiados por la oferta, la demanda y la búsqueda de ganancias.</p>
+                    <div class="ventajas">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li><b>Eficiencia e innovación:</b> La competencia obliga a las empresas a mejorar y crear nuevos productos para sobrevivir.</li>
+                            <li><b>Libertad económica:</b> Los individuos son libres de elegir qué consumir, dónde trabajar y qué negocios crear.</li>
+                            <li><b>Soberanía del consumidor:</b> En teoría, los consumidores deciden qué se produce a través de sus decisiones de compra.</li>
+                        </ul>
                     </div>
-                    <div class="modelo-contenido">
-                        <div class="detalle-modelo">
-                            <h4>Definición y Características Clave:</h4>
-                            <p>El capitalismo es un sistema económico caracterizado por la propiedad privada de los medios de producción (capital, tierra, fábricas) y su operación con el fin de obtener beneficios. Las decisiones sobre inversión, producción y distribución se guían por las señales del mercado, principalmente la oferta y la demanda. La competencia entre empresas es un motor clave para la innovación y la eficiencia. Los individuos son libres de buscar su propio interés económico, y se asume que esto, bajo ciertas condiciones, conduce al bienestar general ("mano invisible" de Adam Smith).</p>
-                        </div>
-                        <div class="pros-contras">
-                            <div class="pros"><h4><i class="fa-solid fa-circle-plus"></i>Ventajas</h4><ul><li>Alta eficiencia económica y capacidad de innovación.</li><li>Amplia variedad de bienes y servicios disponibles.</li><li>Libertad económica individual y de elección para consumidores y productores.</li><li>Potencial significativo para la creación de riqueza y el crecimiento económico.</li></ul></div>
-                            <div class="contras"><h4><i class="fa-solid fa-circle-minus"></i>Desventajas</h4><ul><li>Tendencia a la desigualdad en la distribución de ingresos y riqueza.</li><li>Inestabilidad inherente con ciclos de auge y recesión económica.</li><li>Posibilidad de formación de monopolios u oligopolios que limitan la competencia.</li><li>Externalidades negativas (como la contaminación) si no se regulan adecuadamente.</li><li>Enfoque en el beneficio a corto plazo puede descuidar inversiones a largo plazo o bienes públicos.</li></ul></div>
-                        </div>
-                         <div class="ejemplos"><h4><i class="fa-solid fa-map-pin"></i>Ejemplos:</h4><p>Estados Unidos, Reino Unido, Canadá, Japón, Alemania (aunque la mayoría de estos son en realidad economías mixtas con fuerte componente capitalista). El grado de "pureza" capitalista varía considerablemente.</p></div>
+                    <div class="desventajas">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li><b>Desigualdad de ingresos:</b> Tiende a concentrar la riqueza, creando grandes brechas sociales.</li>
+                            <li><b>Inestabilidad y crisis:</b> Es propenso a ciclos de auge y recesión que generan desempleo e incertidumbre.</li>
+                            <li><b>Creación de monopolios:</b> Las empresas exitosas pueden crecer tanto que eliminan la competencia y controlan el mercado.</li>
+                        </ul>
                     </div>
-                </li>
-                <li class="modelo-item">
-                    <div class="modelo-trigger">
-                        <span class="modelo-nombre"><i class="fa-solid fa-people-group"></i>Socialismo (Economía Planificada)</span>
-                        <span class="toggle-icon">+</span>
+                    <h4>Ejemplos</h4>
+                    <p>Estados Unidos, Japón, Reino Unido, Alemania (aunque todos son en realidad mixtos, se inclinan fuertemente hacia el libre mercado).</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Modelo Económico Socialista (Planificado)</summary>
+                <div class="details-content">
+                    <p>El Estado posee y controla los medios de producción. Un órgano de planificación central decide qué, cómo y para quién producir, buscando la igualdad social.</p>
+                    <div class="ventajas">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li><b>Búsqueda de la equidad:</b> El objetivo principal es reducir la desigualdad y eliminar la pobreza extrema.</li>
+                            <li><b>Servicios básicos universales:</b> El Estado puede garantizar el acceso a salud, educación y vivienda para todos.</li>
+                            <li><b>Movilización de recursos:</b> Puede dirigir todos los recursos del país hacia grandes proyectos nacionales (industrialización, infraestructura).</li>
+                        </ul>
                     </div>
-                    <div class="modelo-contenido">
-                        <div class="detalle-modelo">
-                            <h4>Definición y Características Clave:</h4>
-                            <p>En su concepción teórica más pura, el socialismo implica la propiedad social (generalmente estatal o colectiva) de los medios de producción. Las decisiones económicas fundamentales (qué, cómo y para quién producir) son tomadas por una autoridad central de planificación en lugar del mercado. El objetivo principal es la satisfacción de las necesidades sociales y la búsqueda de la igualdad en la distribución de la riqueza y los recursos, por encima del beneficio individual o la acumulación de capital privado. Existen muchas variantes del socialismo, desde formas democráticas hasta sistemas autoritarios de partido único.</p>
-                        </div>
-                        <div class="pros-contras">
-                            <div class="pros"><h4><i class="fa-solid fa-circle-plus"></i>Ventajas (Teóricas/Potenciales)</h4><ul><li>Reducción drástica de la desigualdad económica y social.</li><li>Posibilidad de pleno empleo al dirigir la producción a las necesidades.</li><li>Provisión universal de servicios básicos como salud y educación.</li><li>Eliminación de la explotación laboral (en teoría).</li></ul></div>
-                            <div class="contras"><h4><i class="fa-solid fa-circle-minus"></i>Desventajas (Observadas en la Práctica)</h4><ul><li>Ineficiencia económica debido a la falta de señales de precios del mercado y competencia.</li><li>Dificultad para la planificación centralizada de economías complejas (problema del cálculo económico).</li><li>Falta de incentivos para la innovación y el esfuerzo individual.</li><li>Restricción de libertades económicas e individuales.</li><li>Posibilidad de corrupción, burocracia excesiva y concentración de poder.</li></ul></div>
-                        </div>
-                        <div class="ejemplos"><h4><i class="fa-solid fa-map-pin"></i>Ejemplos Históricos/Actuales:</h4><p>La antigua Unión Soviética y los países del bloque del Este. Cuba, Corea del Norte, y en menor medida China y Vietnam (aunque estos últimos han incorporado fuertes elementos de mercado). Muchos partidos socialdemócratas en Europa abogan por formas de socialismo democrático dentro de economías mixtas.</p></div>
+                    <div class="desventajas">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li><b>Ineficiencia crónica:</b> La planificación central es rígida y no puede responder a las necesidades reales, causando escasez o excedentes.</li>
+                            <li><b>Falta de incentivos:</b> Sin competencia ni recompensa por el mérito, la productividad y la calidad de los productos son bajas.</li>
+                            <li><b>Supresión de libertades:</b> Limita drásticamente la libertad económica y, por lo general, las libertades individuales y políticas.</li>
+                        </ul>
                     </div>
-                </li>
-                 <li class="modelo-item">
-                    <div class="modelo-trigger">
-                        <span class="modelo-nombre"><i class="fa-solid fa-scale-balanced"></i>Economía Mixta</span>
-                        <span class="toggle-icon">+</span>
+                    <h4>Ejemplos</h4>
+                    <p>Corea del Norte y Cuba. Históricamente, la Unión Soviética y los países de Europa del Este.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Modelo Económico Mixto</summary>
+                <div class="details-content">
+                    <p>Combina elementos del capitalismo y el socialismo. El mercado es el principal asignador de recursos, pero el Estado interviene para regular, corregir fallos y proveer bienes y servicios sociales.</p>
+                    <div class="ventajas">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li><b>Equilibrio y pragmatismo:</b> Aprovecha la eficiencia del mercado mientras el Estado protege a los vulnerables con una red de seguridad.</li>
+                            <li><b>Libertad con protección:</b> Permite la iniciativa privada, pero con regulaciones que protegen a los trabajadores, consumidores y el medio ambiente.</li>
+                            <li><b>Mayor estabilidad económica:</b> La intervención estatal puede suavizar las crisis y reducir el desempleo.</li>
+                        </ul>
                     </div>
-                    <div class="modelo-contenido">
-                        <div class="detalle-modelo">
-                            <h4>Definición y Características Clave:</h4>
-                            <p>Una economía mixta es un sistema que combina elementos tanto del capitalismo (mercado libre, propiedad privada) como del socialismo (intervención estatal, propiedad pública, búsqueda de objetivos sociales). En este modelo, el mercado sigue siendo el principal mecanismo de asignación de recursos para muchos bienes y servicios, pero el Estado juega un papel activo en la economía. Esta intervención puede tomar diversas formas: regulación de mercados para corregir fallos (monopolios, externalidades), provisión de bienes públicos (defensa, infraestructura), redistribución de la renta a través de impuestos y transferencias (seguridad social, subsidios), y en algunos casos, propiedad estatal de industrias estratégicas.</p>
-                        </div>
-                        <div class="pros-contras">
-                            <div class="pros"><h4><i class="fa-solid fa-circle-plus"></i>Ventajas</h4><ul><li>Intenta combinar la eficiencia y dinamismo del mercado con la equidad y estabilidad social.</li><li>Mayor capacidad para proveer bienes públicos y atender necesidades sociales que el capitalismo puro.</li><li>Reducción de las desigualdades extremas y mayor protección social.</li><li>Flexibilidad para adaptarse a diferentes contextos y prioridades nacionales.</li></ul></div>
-                            <div class="contras"><h4><i class="fa-solid fa-circle-minus"></i>Desventajas</h4><ul><li>El grado óptimo de intervención estatal es objeto de debate constante y puede ser difícil de determinar.</li><li>Riesgo de ineficiencia burocrática o "captura del regulador" por intereses privados.</li><li>Posibles distorsiones del mercado si la intervención no está bien diseñada.</li><li>Puede generar tensiones entre los objetivos de eficiencia económica y equidad social.</li></ul></div>
-                        </div>
-                         <div class="ejemplos"><h4><i class="fa-solid fa-map-pin"></i>Ejemplos:</h4><p>La gran mayoría de las economías desarrolladas del mundo operan como economías mixtas. Ejemplos notables incluyen Alemania (con su "economía social de mercado"), los países nórdicos (Suecia, Noruega, Finlandia, con un fuerte estado de bienestar), Francia, Canadá, y también Estados Unidos, que aunque fuertemente capitalista, tiene una significativa intervención gubernamental en áreas como la salud, la educación y la regulación.</p></div>
+                    <div class="desventajas">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li><b>Debate político constante:</b> Siempre existe la discusión sobre si el Estado interviene demasiado o muy poco.</li>
+                            <li><b>Carga fiscal elevada:</b> Financiar los servicios públicos (salud, educación, pensiones) requiere altos impuestos.</li>
+                            <li><b>Ineficiencia en el sector público:</b> Las empresas estatales pueden ser menos eficientes por falta de competencia.</li>
+                        </ul>
                     </div>
-                </li>
-                <li class="modelo-item">
-                    <div class="modelo-trigger">
-                        <span class="modelo-nombre"><i class="fa-solid fa-globe"></i>Neoliberalismo</span>
-                        <span class="toggle-icon">+</span>
+                    <h4>Ejemplos</h4>
+                    <p>La mayoría de los países del mundo, como Canadá, Suecia, Francia, Alemania, y también Colombia.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Modelo Económico Sostenible</summary>
+                <div class="details-content">
+                    <p>Busca un desarrollo que equilibre tres pilares: <b>crecimiento económico, equidad social y protección ambiental.</b> Su objetivo es satisfacer las necesidades del presente sin comprometer los recursos de las futuras generaciones.</p>
+                    <div class="ventajas">
+                        <h4>Ventajas</h4>
+                        <ul>
+                            <li><b>Viabilidad a largo plazo:</b> Asegura la preservación de los recursos naturales y la estabilidad del ecosistema.</li>
+                            <li><b>Fomento de la innovación verde:</b> Impulsa el desarrollo de energías renovables, economía circular y tecnologías limpias.</li>
+                            <li><b>Resiliencia:</b> Una economía diversificada y menos dependiente de recursos finitos es más resistente a crisis globales.</li>
+                        </ul>
                     </div>
-                    <div class="modelo-contenido">
-                        <div class="detalle-modelo">
-                            <h4>Definición y Características Clave:</h4>
-                            <p>El neoliberalismo es una corriente de pensamiento económico y político que aboga por la revitalización de las ideas del liberalismo clásico del siglo XIX, enfatizando el libre mercado como el mecanismo más eficiente para la asignación de recursos y la generación de riqueza. Sus políticas clave incluyen la desregulación de los mercados (financiero, laboral, etc.), la privatización de empresas y servicios públicos, la reducción del gasto público (especialmente en programas sociales), la liberalización del comercio internacional y los flujos de capital, y un enfoque en el control de la inflación a través de políticas monetarias restrictivas. Se busca minimizar la intervención del Estado en la economía.</p>
-                        </div>
-                        <div class="pros-contras">
-                            <div class="pros"><h4><i class="fa-solid fa-circle-plus"></i>Ventajas (Argumentadas por sus Defensores)</h4><ul><li>Mayor eficiencia económica y estímulo a la competencia.</li><li>Potencial de crecimiento económico a través de la inversión privada y el comercio.</li><li>Reducción de la inflación y control del déficit fiscal.</li><li>Mayor libertad de elección para consumidores y empresas.</li></ul></div>
-                            <div class="contras"><h4><i class="fa-solid fa-circle-minus"></i>Desventajas (Criticadas por sus Detractores)</h4><ul><li>Aumento significativo de la desigualdad de ingresos y riqueza.</li><li>Precarización del empleo y debilitamiento de los sindicatos.</li><li>Mayor inestabilidad financiera y crisis recurrentes debido a la desregulación.</li><li>Reducción de la inversión en bienes públicos y servicios sociales esenciales.</li><li>Pérdida de soberanía económica nacional frente a corporaciones multinacionales y mercados globales.</li></ul></div>
-                        </div>
-                        <div class="ejemplos"><h4><i class="fa-solid fa-map-pin"></i>Implementación y Contexto:</h4><p>Las políticas neoliberales ganaron prominencia a partir de la década de 1970 y 1980, implementadas notablemente por gobiernos como el de Margaret Thatcher en el Reino Unido y Ronald Reagan en Estados Unidos. Organismos internacionales como el Fondo Monetario Internacional (FMI) y el Banco Mundial también promovieron estas políticas en muchos países en desarrollo a través de programas de ajuste estructural ("Consenso de Washington"). Ha sido objeto de intensos debates y críticas, especialmente tras la crisis financiera de 2008.</p></div>
+                    <div class="desventajas">
+                        <h4>Desventajas</h4>
+                        <ul>
+                            <li><b>Altos costos de transición:</b> Cambiar la infraestructura energética e industrial es muy costoso al principio.</li>
+                            <li><b>Posible ralentización del crecimiento:</b> Las regulaciones ambientales pueden limitar ciertas actividades económicas a corto plazo.</li>
+                            <li><b>Requiere cooperación global:</b> Problemas como el cambio climático no pueden ser resueltos por un solo país.</li>
+                        </ul>
                     </div>
-                </li>
-                <li class="modelo-item">
-                    <div class="modelo-trigger">
-                        <span class="modelo-nombre"><i class="fa-solid fa-recycle"></i>Economía Sostenible (Desarrollo Sostenible)</span>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="modelo-contenido">
-                        <div class="detalle-modelo">
-                            <h4>Definición y Características Clave:</h4>
-                            <p>La economía sostenible, o el enfoque de desarrollo sostenible, busca un modelo de progreso que satisfaga las necesidades de la generación presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades. Este concepto integra de manera equilibrada tres dimensiones interdependientes: la económica (crecimiento y eficiencia), la social (equidad, inclusión, bienestar) y la ambiental (protección de ecosistemas, uso racional de recursos). Promueve el uso eficiente de los recursos naturales, la minimización de la contaminación y los residuos, la protección de la biodiversidad, la inversión en energías renovables, y la promoción de la justicia social y la equidad intra e intergeneracional.</p>
-                        </div>
-                        <div class="pros-contras">
-                            <div class="pros"><h4><i class="fa-solid fa-circle-plus"></i>Ventajas</h4><ul><li>Preservación del capital natural para las futuras generaciones.</li><li>Mejora de la calidad de vida y la salud pública a largo plazo.</li><li>Fomenta la innovación en tecnologías limpias y modelos de negocio circulares.</li><li>Mayor resiliencia frente a crisis ambientales y escasez de recursos.</li><li>Potencial para crear nuevos empleos "verdes" y sectores económicos.</li></ul></div>
-                            <div class="contras"><h4><i class="fa-solid fa-circle-minus"></i>Desventajas y Desafíos</h4><ul><li>Posibles costos de transición más altos a corto plazo para empresas y gobiernos.</li><li>Requiere cambios significativos en los patrones de producción y consumo actuales.</li><li>Complejidad en la medición y valoración del capital natural y los servicios ecosistémicos.</li><li>Desafíos en la coordinación internacional y el cumplimiento de acuerdos ambientales globales.</li><li>Puede enfrentar resistencia de intereses económicos establecidos en sectores contaminantes.</li></ul></div>
-                        </div>
-                        <div class="ejemplos"><h4><i class="fa-solid fa-map-pin"></i>Enfoques y Políticas:</h4><p>Economía circular (reducir, reutilizar, reciclar), inversión en energías renovables (solar, eólica), agricultura orgánica y regenerativa, sistemas de transporte público eficientes, impuestos al carbono, certificaciones de sostenibilidad, fomento del comercio justo, y la implementación de los Objetivos de Desarrollo Sostenible (ODS) de las Naciones Unidas. Países como Costa Rica, Uruguay, y varias naciones europeas están implementando políticas activas en esta dirección, aunque ningún país ha alcanzado aún una sostenibilidad completa.</p></div>
-                    </div>
-                </li>
-            </ul>
+                    <h4>Ejemplos</h4>
+                    <p>Países pioneros como Costa Rica (ecoturismo, reforestación) y las naciones nórdicas (Noruega, Dinamarca, Suecia) con sus altas inversiones en energías renovables y políticas sociales.</p>
+                </div>
+            </details>
+             <a href="https://youtu.be/AEuETacbKXQ?si=Hj7LmXGKMW_gTAag" target="_blank" class="video-link">Video: Explicación a fondo: Sistemas economicos (Actividades Economicas)</a>
         </section>
 
-        <!-- SECCIÓN DEL JUEGO ELIMINADA -->
+        <section id="economia-precolombina">
+            <h2>La Economía Precolombina en Colombia</h2>
+            <p>Antes de la llegada europea, el territorio colombiano era un mosaico de culturas con economías complejas, diversificadas y adaptadas a una geografía única.</p>
 
-        <footer>
-            <p>&copy; 2024 - Portal Económico Futurista Detallado.</p>
-            <p>Desarrollado por: <span class="nombre-autor">SAMUEL LOZANO ACOSTA</span> - Grado 9-8</p>
-            <p><a href="mailto:tuemail@example.com?subject=Contacto desde Portal Económico Futurista"><i class="fa-solid fa-envelope"></i> Contacto Nexus</a></p>
-        </footer>
+            <h3>Densidad de Pueblos y Regiones</h3>
+            <p>Pueblos como los <b>Muiscas</b> (altiplano), <b>Taironas</b> (Sierra Nevada), <b>Quimbayas</b> (Eje Cafetero) y <b>Zenúes</b> (llanuras del Caribe) desarrollaron sistemas económicos especializados. Su organización no era un imperio unificado, sino una red de cacicazgos independientes que comerciaban entre sí.</p>
+            
+            <h3>Agricultura como Base Económica</h3>
+            <p>La agricultura era la columna vertebral. Gracias a la diversidad de pisos térmicos, cultivaban una gran variedad de productos: <b>maíz y yuca</b> en tierras cálidas; <b>papa, frijol y quinua</b> en tierras frías. Las técnicas eran sofisticadas: los Taironas construyeron <b>terrazas de piedra</b> y redes de caminos, mientras que los Zenúes dominaron las inundaciones con un <b>sistema de canales de 500,000 hectáreas</b>.</p>
+
+            <h3>Caza, Pesca y Recolección</h3>
+            <p>Estas actividades complementaban la dieta y proveían materias primas. Cazaban venados, capibaras y aves. La pesca en los grandes ríos (Magdalena, Cauca) y en ambos océanos era fundamental. La recolección de frutos, miel y plantas medicinales demostraba un profundo conocimiento de la biodiversidad.</p>
+
+            <h3>Minería y Recursos Naturales</h3>
+            <p>Eran expertos en la extracción de <b>oro, esmeraldas y sal</b>. El oro no tenía un valor monetario, sino un profundo <b>valor simbólico y ritual</b>, usado para conectar con los dioses. Las esmeraldas de Muzo y la sal de Zipaquirá eran productos de lujo muy cotizados en las redes de intercambio.</p>
+
+            <h3>El Trueque como Forma de Intercambio</h3>
+            <p>El comercio se basaba en el trueque. Se establecieron rutas comerciales que conectaban todo el territorio. Los Muiscas, por ejemplo, llevaban sal y esmeraldas a los mercados (<i>tiangues</i>) para intercambiarlas por el oro y el algodón de otras etnias. Se usaban "monedas" de mercancía como mantas de algodón o panes de sal para facilitar el intercambio.</p>
+
+            <h3>Organización del Trabajo y Territorio</h3>
+            <p>El trabajo era comunitario (<b>minga</b>) y organizado por el cacique. La tierra era propiedad colectiva, no individual. Existía una especialización del trabajo: agricultores, orfebres, tejedores y chamanes, cada uno cumpliendo una función vital para la comunidad.</p>
+
+            <h3>Tecnología y Saberes Tradicionales</h3>
+            <p>Dominaban la orfebrería con técnicas como la <b>cera perdida</b> y la <b>tumbaga</b> (aleación de oro y cobre). Su cerámica y sus textiles, especialmente los de los Muiscas y Guanes, eran de altísima calidad y también servían como bienes de intercambio y ofrendas religiosas.</p>
+
+       
+
+        <section id="economia-colonial">
+            <h2>La Economía Colonial en Colombia</h2>
+            <p>La conquista española impuso un nuevo orden económico cuyo único objetivo era la extracción de riquezas para la metrópoli. Este modelo se basó en el <b>mercantilismo</b>, una teoría que medía la riqueza de una nación por la cantidad de metales preciosos que acumulaba.</p>
+            
+            <h3>Sistemas de Explotación de Mano de Obra</h3>
+            <p>La economía se sostuvo sobre el trabajo forzado:</p>
+            <ul>
+                <li><b>La Encomienda:</b> Asignación de indígenas a un español (encomendero) para que trabajaran a cambio de ser "evangelizados". Fue una forma de servidumbre que diezmó a la población nativa.</li>
+                <li><b>La Mita:</b> Sistema de turnos de trabajo obligatorio, especialmente en las minas de oro y plata. Las condiciones eran inhumanas.</li>
+                <li><b>La Esclavitud:</b> Ante el colapso demográfico indígena, se secuestraron y transportaron forzosamente millones de africanos para trabajar como esclavos en minas, haciendas y plantaciones.</li>
+            </ul>
+
+            <h3>Foco en la Minería Extractivista</h3>
+            <p>La principal actividad fue la minería de <b>oro</b> (en Antioquia, Chocó, Popayán) y <b>plata</b>. Toda la producción estaba controlada por la Corona, que cobraba un impuesto del 20% llamado el <b>"Quinto Real"</b>. Esta economía no generó desarrollo local, sino que drenó las riquezas del territorio.</p>
+
+            <h3>La Hacienda y la Producción Agrícola</h3>
+            <p>Las <b>haciendas</b> eran grandes latifundios en manos de españoles donde se cultivaba caña de azúcar, tabaco y alimentos para abastecer las ciudades y centros mineros. Esto consolidó una élite terrateniente y un modelo de propiedad de la tierra muy desigual que perdura hasta hoy.</p>
+
+            <h3>Monopolio Comercial y Control Fiscal</h3>
+            <p>España impuso un estricto <b>monopolio comercial</b>. El Nuevo Reino de Granada solo podía comerciar con España a través del puerto de Cartagena. Todas las transacciones eran reguladas desde España por la <b>Casa de Contratación de Sevilla</b>. Este sistema, diseñado para evitar la fuga de metales preciosos, encarecía los productos y fomentó un masivo <b>contrabando</b> con ingleses y holandeses.</p>
+            
+            <a href="https://youtu.be/T_8XXGDPKyI?si=1xeBlBsG1ex2xaI4" target="_blank" class="video-link">Video: La economía colonial en América (Bully Magnets)</a>
+        </section>
+
     </div>
 
-    <a id="btnVolverArriba" title="Volver Arriba"><i class="fa-solid fa-angles-up"></i></a>
+    <footer>
+        <p>Samuel Lozano Acosta</p>
+        <p>Grado 9-8</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-    <script>
-        // --- Configuración de tsParticles ---
-        async function loadParticles(options) {
-            await tsParticles.load("particles-js", options);
-        }
-        const particlesOptions = { 
-            fpsLimit:60,interactivity:{events:{onClick:{enable:!0,mode:"push"},onHover:{enable:!0,mode:"repulse"},resize:!0},modes:{bubble:{distance:200,duration:2,opacity:.8,size:40},grab:{distance:140,line_linked:{opacity:1}},push:{particles_nb:4},remove:{particles_nb:2},repulse:{distance:100,duration:.4}}},particles:{color:{value:["#00c0ff","#39ff14"]},collisions:{enable:!0},links:{color:"#ffffff",distance:150,enable:!0,opacity:.2,width:1},move:{direction:"none",enable:!0,outMode:"bounce",random:!1,speed:1.5,straight:!1},number:{density:{enable:!0,area:800},value:60},opacity:{value:.4},shape:{type:"circle"},size:{random:!0,value:{min:1,max:4}}},detectRetina:!0
-        };
-        loadParticles(particlesOptions);
-
-        // --- Script para Acordeones (Modelos) ---
-        document.addEventListener('DOMContentLoaded', function () {
-            const modelos = document.querySelectorAll('.modelo-item');
-            modelos.forEach(modelo => {
-                const trigger = modelo.querySelector('.modelo-trigger');
-                const contenido = modelo.querySelector('.modelo-contenido');
-                const icono = modelo.querySelector('.toggle-icon');
-
-                if (trigger && contenido && icono) {
-                    trigger.addEventListener('click', () => {
-                        const isActive = modelo.classList.contains('active');
-                        modelo.classList.toggle('active');
-                        if (modelo.classList.contains('active')) {
-                            contenido.style.maxHeight = contenido.scrollHeight + "px";
-                            icono.textContent = '−';
-                        } else {
-                            contenido.style.maxHeight = '0';
-                            icono.textContent = '+';
-                        }
-                    });
-                }
-            });
-            // Ya no se inicializa el juego
-        });
-        
-        // --- Botón Volver Arriba ---
-        let btnVolverArriba = document.getElementById("btnVolverArriba");
-        window.onscroll = function() {scrollFunction()};
-        function scrollFunction() {
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            btnVolverArriba.style.display = "block";
-          } else {
-            btnVolverArriba.style.display = "none";
-          }
-        }
-        btnVolverArriba.addEventListener('click', function() {
-            document.body.scrollTop = 0; 
-            document.documentElement.scrollTop = 0; 
-        });
-        
-        // --- Animaciones de entrada al hacer scroll ---
-        const secciones = document.querySelectorAll('section');
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        secciones.forEach(seccion => { observer.observe(seccion); });
-        
-        // --- Activar link de navegación según scroll ---
-        const navLinks = document.querySelectorAll('.main-nav a');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const seccionesActivas = document.querySelectorAll('section');
-            seccionesActivas.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) { 
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-            if (pageYOffset < (seccionesActivas.length > 0 ? (seccionesActivas[0].offsetTop - seccionesActivas[0].clientHeight / 3) : 0) || current === '') {
-                navLinks.forEach(link => link.classList.remove('active'));
-                const inicioLink = document.querySelector('.main-nav a[href="#inicio"]');
-                if (inicioLink) inicioLink.classList.add('active');
-            }
-        });
-
-    </script>
 </body>
 </html>
